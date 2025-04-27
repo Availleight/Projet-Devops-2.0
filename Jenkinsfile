@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        FRONTEND_IMAGE = 'frontend-image'
-        BACKEND_IMAGE = 'backend-image'
+        FRONTEND_IMAGE = 'devops-frontend'
+        BACKEND_IMAGE = 'devops-backend'
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
                 script {
                     // Run Docker Compose to deploy
                     echo 'Deploying containers...'
-                    sh 'docker-compose up -d'
+                    sh 'docker-compose up -d --build --remove-orphans'
                 }
             }
         }
