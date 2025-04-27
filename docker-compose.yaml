@@ -20,8 +20,7 @@ services:
       - support_net
     environment:
       - NODE_ENV=production
-    volumes:
-      - ./backend:/app
+    
 
 networks:
   support_net:
