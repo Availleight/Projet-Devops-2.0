@@ -22,7 +22,7 @@ pipeline {
                 script {
                     // Build the backend Docker image
                     echo 'Building Backend...'
-                    sh 'docker build -t $BACKEND_IMAGE ./backend'
+                    sh 'docker build --no-cache -t $BACKEND_IMAGE ./backend'
                 }
             }
         }
