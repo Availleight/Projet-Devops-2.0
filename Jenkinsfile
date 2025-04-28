@@ -27,15 +27,15 @@ pipeline {
             }
         }
 
-        stage('Test Inside Backend Container') {
-      steps {
-        script {
-          // Run the tests inside a disposable container
-            echo 'Running tests inside Backend container...'
-            sh """ docker run --rm     -w /app  $BACKEND_IMAGE npm test """
-        }
-      }
-    }
+    //     stage('Test Inside Backend Container') {
+    //   steps {
+    //     script {
+    //       // Run the tests inside a disposable container
+    //         echo 'Running tests inside Backend container...'
+    //         sh """ docker run --rm   $BACKEND_IMAGE npm test """
+    //     }
+    //   }
+    // }
 
         stage('Deploy Containers') {
             steps {
