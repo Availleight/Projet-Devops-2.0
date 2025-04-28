@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // Build the frontend Docker image
                     echo 'Building Frontend...'
-                    bat 'docker build -t $FRONTEND_IMAGE ./frontend'
+                    bat 'docker build -t devops-frontend ./frontend'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                 script {
                     // Build the backend Docker image
                     echo 'Building Backend...'
-                    bat 'docker build --no-cache -t $BACKEND_IMAGE ./backend'
+                    bat 'docker build --no-cache -t devops-backend ./backend'
                 }
             }
         }
