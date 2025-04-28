@@ -32,13 +32,7 @@ pipeline {
         script {
           // Run the tests inside a disposable container
             echo 'Running tests inside Backend container...'
-            
-          sh """
-            docker run --rm \        
-              -w /app \
-              $BACKEND_IMAGE \
-              npm test
-          """
+            sh """ docker run --rm     -w /app  $BACKEND_IMAGE npm test """
         }
       }
     }
