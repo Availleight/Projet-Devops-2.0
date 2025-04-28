@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // Build the frontend Docker image
                     echo 'Building Frontend...'
-                    sh 'docker build -t $FRONTEND_IMAGE ./frontend'
+                    bat 'docker build -t $FRONTEND_IMAGE ./frontend'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                 script {
                     // Build the backend Docker image
                     echo 'Building Backend...'
-                    sh 'docker build --no-cache -t $BACKEND_IMAGE ./backend'
+                    bat 'docker build --no-cache -t $BACKEND_IMAGE ./backend'
                 }
             }
         }
@@ -42,7 +42,7 @@ pipeline {
                 script {
                     // Run Docker Compose to deploy
                     echo 'Deploying containers...'
-                    sh 'docker-compose up -d --build --remove-orphans'
+                    bat 'docker-compose up -d --build --remove-orphans'
                 }
             }
         }
