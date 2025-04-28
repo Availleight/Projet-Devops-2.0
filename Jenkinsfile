@@ -33,7 +33,7 @@ pipeline {
           // Run the tests inside a disposable container
           sh """
             docker run --rm \
-              -v $(pwd)/backend:/app \            # mount code so nodemon/dev files are there if needed
+              -v $\(pwd)/backend:/app \            # mount code so nodemon/dev files are there if needed
               -w /app \
               $BACKEND_IMAGE \
               npm test
