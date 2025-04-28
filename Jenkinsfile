@@ -27,6 +27,15 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                script {
+                    sh 'npm run test' // Backend
+                
+                }
+            }
+        }
+
         stage('Deploy Containers') {
             steps {
                 script {

@@ -10,6 +10,9 @@ services:
       - support_net
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/usr/share/nginx/html      # Mount static frontend files
+      - ./frontend/nginx.conf:/etc/nginx/nginx.conf  # Mount nginx.conf into the container
 
   backend:
     build:
@@ -20,6 +23,11 @@ services:
       - support_net
     environment:
       - NODE_ENV=production
+    volumes:
+      - ./backend:/app
+      - ./database:/app/database
+      - /app/node_modules
+    command: npm run dev 
     
 
 networks:

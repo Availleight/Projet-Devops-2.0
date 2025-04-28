@@ -17,4 +17,4 @@ COPY . /app
 EXPOSE 3000
 
 # Command to run the server
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
