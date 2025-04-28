@@ -23,9 +23,10 @@ services:
       - support_net
     environment:
       - NODE_ENV=production
+      - JWT_SECRET=supersecret123
     volumes:
       - ./backend:/app
-      - ./database:/app/database
+      - ./backend/database:/app/database
       - /app/node_modules
     command: npm run dev 
     
