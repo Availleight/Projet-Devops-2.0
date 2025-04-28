@@ -31,9 +31,10 @@ pipeline {
       steps {
         script {
           // Run the tests inside a disposable container
+            echo 'Running tests inside Backend container...'
+            
           sh """
-            docker run --rm \
-              -v $\(pwd)/backend:/app \            # mount code so nodemon/dev files are there if needed
+            docker run --rm \        
               -w /app \
               $BACKEND_IMAGE \
               npm test
